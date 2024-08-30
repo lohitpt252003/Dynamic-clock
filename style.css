@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #121212; /* Darker background */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif; /* Consistent font */
+}
+
+.container {
+    margin-top: 10px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: #e0e0e0; /* Lighter text color */
+}
+
+.circle {
+    width: 25rem;
+    height: 25rem;
+    background-color: #1c1c1c; /* Dark background for the clock face */
+    position: relative;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Softer shadow */
+    border: 5px solid #d2b48c; /* Burlywood border */
+}
+
+.point {
+    width: 1rem;
+    height: 1rem;
+    background-color: #a3a3a3; /* Lighter point color */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+
+#hour-hand {
+    width: 100px;
+    height: 5px;
+    background-color: #d32f2f; /* Dark red hour hand */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: left;
+    transform: translateY(-50%);
+    border-radius: 20px 20px;
+}
+
+#minute-hand {
+    width: 150px;
+    height: 3.5px;
+    background-color: #1976d2; /* Dark blue minute hand */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: left;
+    transform: translateY(-50%);
+    border-radius: 20px 20px;
+}
+
+#second-hand {
+    width: 175px;
+    height: 1px;
+    background-color: #388e3c; /* Dark green second hand */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: left;
+    transform: translateY(-50%);
+    border-radius: 20px 20px;
+}
+
+.number {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(calc(30deg * var(--i))) translate(11rem) rotate(calc(-30deg * var(--i)));
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 2rem;
+    color: #ffffff; /* White number color */
+}
+
+.heading {
+    font-size: 2rem;
+    text-align: center;
+    color: #ffffff; /* White heading color */
+}
+
+.rectangle {
+    width: 200px;
+    padding: 25px;
+    background-color: #2e2e2e; /* Darker rectangle background */
+    border: 2px solid #555555; /* Darker border */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #e0e0e0; /* Lighter text */
+}
+
+#second {
+    animation: blink 1s infinite;
+    font-size: 1.5rem;
+    color: #ff5252; /* Red for second display */
+    text-align: center;
+    line-height: 2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Softer shadow */
+    background-color: #1e1e1e; /* Dark background */
+    border: 1px solid #444444; /* Darker border */
+}
+
+#minute {
+    animation: blink 1s infinite;
+    font-size: 1.5rem;
+    color: #8bc34a; /* Green for minute display */
+    text-align: center;
+    line-height: 2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Softer shadow */
+    background-color: #1e1e1e; /* Dark background */
+    border: 1px solid #444444; /* Darker border */
+}
+
+#hour {
+    animation: blink 1s infinite;
+    font-size: 1.5rem;
+    color: #42a5f5; /* Blue for hour display */
+    text-align: center;
+    line-height: 2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Softer shadow */
+    background-color: #1e1e1e; /* Dark background */
+    border: 1px solid #444444; /* Darker border */
+}
+
+#ampm {
+    font-size: 1.5rem;
+    color: #ffffff; /* White text for AM/PM */
+    text-align: center;
+    line-height: 2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #3a3a3a; /* Slightly lighter background */
+    border: 1px solid #5a5a5a; /* Slightly lighter border */
+}
+
+.upper {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 1rem;
+    gap: 20px;
+}
+
+.alarm,
+.timer {
+    padding: 1rem;
+    border: 2px solid #444444;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    flex-grow: 1;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333333;
+    color: #e0e0e0;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #555555;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #e0e0e0;
+}
+
+input[type="time"],
+input[type="number"] {
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #888888; /* Slightly lighter border for better visibility */
+    background-color: #2a2a2a; /* Slightly lighter background */
+    color: #ffffff; /* White text for contrast */
+}
+
+.timer-inputs {
+    display: flex;
+    gap: 10px;
+}
+
+.timer-inputs input {
+    width: 100%; /* Full width for each input in the flex container */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #888888; /* Consistent border color */
+    background-color: #2a2a2a; /* Consistent background color */
+    color: #ffffff; /* Consistent text color */
+}
+
+
+#remaining-time {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #e0e0e0;
+}
+
+/* Color classes for messages */
+.message {
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+/* Success messages (Green) */
+.success {
+    background-color: #388e3c;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+/* Error messages (Red) */
+.error {
+    background-color: #d32f2f;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+/* Info messages (Yellow) */
+.info {
+    background-color: #abb013;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    text-align: center;
+}

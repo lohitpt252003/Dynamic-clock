@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Theme Clock with Alarm and Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="upper">
+        <div class="alarm">
+            <h1>Alarm</h1>
+            <h1 id="alarm-message" class="info">No alarms as of now!</h1> <!-- Updated ID for alarm message -->
+            <label for="alarm-input">Please Select the Time</label>
+            <input type="time" id="alarm-input">
+            <button id="stop-alarm-button">Stop Alarm</button>
+            <button id="set-alarm-button">Set Alarm</button>
+            <button id="cancel-alarm-button">Cancel Alarm</button>
+        </div>
+        
+        <div class="timer">
+            <h1>Timer</h1>
+            <h1 id="timer-message" class="info">No timer set.</h1> <!-- New ID for timer message -->
+            <label>Please Select the Time</label>
+            <div class="timer-inputs">
+                <input type="number" id="timer-hours" placeholder="HH" min="0" max="23">
+                <span>:</span>
+                <input type="number" id="timer-minutes" placeholder="MM" min="0" max="59">
+                <span>:</span>
+                <input type="number" id="timer-seconds" placeholder="SS" min="0" max="59">
+            </div>
+            <div id="remaining-time">Remaining Time: 00:00:00</div> <!-- New div for remaining time -->
+            <button id="cancel-timer-button">Cancel Timer</button>
+            <button id="set-timer-button">Set Timer</button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h1 class="heading" style="margin-bottom: 1rem;">Dynamic Wall Clock</h1>
+        <div class="circle">
+            <div class="number" style="--i:1">4</div>
+            <div class="number" style="--i:2">5</div>
+            <div class="number" style="--i:3">6</div>
+            <div class="number" style="--i:4">7</div>
+            <div class="number" style="--i:5">8</div>
+            <div class="number" style="--i:6">9</div>
+            <div class="number" style="--i:7">10</div>
+            <div class="number" style="--i:8">11</div>
+            <div class="number" style="--i:9">12</div>
+            <div class="number" style="--i:10">1</div>
+            <div class="number" style="--i:11">2</div>
+            <div class="number" style="--i:12">3</div>
+            <div class="point"></div>
+            <div id="hour-hand"></div>
+            <div id="minute-hand"></div>
+            <div id="second-hand"></div>
+        </div>
+        <h1 class="heading" style="margin-top: 1rem;">Dynamic Digital Clock</h1>
+        <div class="rectangle">
+            <div id="hour"></div>
+            <div id="minute"></div>
+            <div id="second"></div>
+            <div id="ampm"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
